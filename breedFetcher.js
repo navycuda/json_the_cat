@@ -2,9 +2,6 @@
 const request = require(`request`);
 
 /* Arguments */
-const args = process.argv.slice(2);
-const SearchKey = args[0];
-
 /* Tcp:Http */
 const Url = `https://api.thecatapi.com/v1/breeds/search`;
 
@@ -12,6 +9,9 @@ const Url = `https://api.thecatapi.com/v1/breeds/search`;
 const exitApp = (exitMessage) => {
   console.log(exitMessage);
   process.exit();
+};
+const fetchBreedDescription = (breedname, callback) {
+  // Well Spock?! Do Something!
 };
 
 /* Execution */
@@ -24,3 +24,6 @@ request(`${Url}?q=${SearchKey}`, (error, response, body) => {
   if (!kitty) exitApp(`Breed '${SearchKey}' not found.`);
   console.log(kitty.description);
 });
+
+/* Exports */
+modules.exports = fetchBreedDescription;
