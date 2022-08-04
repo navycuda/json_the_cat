@@ -1,23 +1,7 @@
-/* Required */
-const request = require(`request`);
-const tools = require(`./tools`);
-
-/* Arguments */
+/* Require */
 /* Tcp:Http */
-const Url = `https://api.thecatapi.com/v1/breeds/search`;
-
-/* Functions */
-const fetchBreedDescription = (breedname, callback) => {
-  // Well Spock?! Do Something!
-  // Query the api with the presented search key
-  request(`${Url}?q=${breedname}`, (error, response, body) => {
-    if (error) tools.exitApp(error);
-    const kitty = JSON.parse(body)[0];
-    if (!kitty) tools.exitApp(`Breed '${breedname}' not found.`);
-    callback(error, kitty.description);
-  });
-};
-
-/* Execution */
+/* Arguments */
+/* Export Functions */
+/* Local Functions */
+/* Execution & Test Data */
 /* Exports */
-module.exports = { fetchBreedDescription };
