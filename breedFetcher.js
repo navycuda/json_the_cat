@@ -9,10 +9,6 @@ const Url = `https://api.thecatapi.com/v1/breeds/search`;
 /* Functions */
 const fetchBreedDescription = (breedname, callback) => {
   // Well Spock?! Do Something!
-
-
-
-  
   // Query the api with the presented search key
   request(`${Url}?q=${breedname}`, (error, response, body) => {
     if (error) tools.exitApp(error);
