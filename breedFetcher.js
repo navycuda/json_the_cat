@@ -9,13 +9,15 @@ const SearchKey = `?q=${args[0]}`;
 
 /* Functions */
 const deserializeJson = (json) => {
-  
+  return JSON.parse(json)[0];
+};
+const exitApp = (exitMessage) => {
+  process.exit();
 };
 
 /* Execution */
 request(Url + SearchKey, (error, response, body) => {
-  console.log(`error:`, error);
-  console.log(`statusCode:`, response && response.statusCode);
-  console.log(`body type`, typeof body);
-  console.log(`body:`, body);
+  if (error) exitApp(error);
+  const kitty = deserializeJson(body);
+  console.log(kitty);
 });
