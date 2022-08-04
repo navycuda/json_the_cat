@@ -18,7 +18,7 @@ const fetchBreedDescription = (breedname, callback) => {
     if (error) tools.exitApp(error);
     const kitty = JSON.parse(body)[0];
     if (!kitty) tools.exitApp(`Breed '${breedname}' not found.`);
-    callback(kitty.description);
+    callback(error, kitty.description);
   });
 };
 

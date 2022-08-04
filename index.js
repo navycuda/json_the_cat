@@ -9,8 +9,9 @@ const SearchKey = args[0];
 
 /* Export Functions */
 /* Local Functions */
-const outputToConsole = (value) => {
-  console.log(value);
+const outputToConsole = (error, value) => {
+  if (!error) console.log(value);
+  else console.log(`error! `, error);
 };
 
 /* Execution & Test Data */
