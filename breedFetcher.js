@@ -20,4 +20,4 @@ const fetchBreedDescription = (breedname, callback) => {
 
 /* Execution */
 /* Exports */
-module.exports = fetchBreedDescription;
+module.exports = { fetchBreedDescription };
