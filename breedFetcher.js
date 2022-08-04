@@ -2,8 +2,11 @@
 /* Tcp:Http */
 /* Arguments */
 /* Export Functions */
-const fetchBreedDescription = () => {
+const fetchBreedDescription = (breed, callback) => {
 
+
+
+  callback(`error`, `description`);
 };
 
 /* Local Functions */
