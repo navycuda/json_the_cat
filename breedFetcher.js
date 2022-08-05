@@ -18,7 +18,7 @@ const fetchBreedDescription = (breed, callback) => {
 
 
     
-    callback(`error`, `description`);
+    callback(``, `description`);
   });
 };
 
