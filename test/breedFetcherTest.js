@@ -22,14 +22,6 @@ describe('fetchBreedDescription', () => {
       done();
     });
   });
-  it(`Invalid Breed: Returns a response about an invalid breed search`, (done) => {
-    fetchBreedDescription(`1701`, (error, description) => {
-      assert.isTrue(error);
-      const expectedDesc = "Search for breed `1701` returned no results";
-      assert.equal(expectedDesc, description.trim());
-      done();
-    });
-  });
   it(`Invalid Arguments: Returns a response about invalid cli arguments`, (done) => {
     fetchBreedDescription(``, (error, description) => {
       assert.isTrue(error);
