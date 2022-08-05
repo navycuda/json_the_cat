@@ -17,8 +17,8 @@ describe('fetchBreedDescription', () => {
   it(`Invalid Breed: Returns a response about an invalid breed search`, (done) => {
     fetchBreedDescription(`1701`, (error, description) => {
       assert.isTrue(error);
-      const expectedDesc = "Search for breed `1701` returned no results";
-      assert.equal(expectedDesc, description.trim());
+      const expectedDesc = "Search for breed '1701' returned no results";
+      assert.equal(expectedDesc, description);
       done();
     });
   });
@@ -26,7 +26,7 @@ describe('fetchBreedDescription', () => {
     fetchBreedDescription(``, (error, description) => {
       assert.isTrue(error);
       const expectedDesc = `Invalid cli arguments\n  $> node index.js siamese`;
-      assert.equal(expectedDesc, description.trim());
+      assert.equal(expectedDesc, description);
       done();
     });
   });

@@ -12,12 +12,13 @@ const fetchBreedDescription = (breed, callback) => {
     callback(`Invalid cli arguments\n  $> node index.js siamese`);
   } else {
     request(ApiUrl + breed, (error, response, body) => {
-      if (error) {
+      console.log(`body: `, body);
+      if (error || body === `[]`) {
         // figure out what kind of error it is and lable as such
-        callback(error);
+        callback(`Search for breed '${breed}' returned no results`);
       } else {
         const kitty = JSON.parse(body)[0];
-        callback(error, kitty.description);
+        callback(error, `kitty.description`);
       }
     });
   }
