@@ -8,7 +8,7 @@ const args = process.argv.slice(2);
 /* Local Functions */
 const outputToConsole = (error, description) => {
   if (error) console.log(error);
-  else console.log(description);
+  else console.log(error);
 };
 
 /* Execution & Test Data */
